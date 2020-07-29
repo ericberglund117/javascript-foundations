@@ -6,6 +6,7 @@ class Centaur {
     this.standing = true;
     this.task = 0;
     this.layingDown = false;
+    this.rested = true;
     }
     shoot(){
       this.task++
@@ -36,6 +37,7 @@ class Centaur {
     sleep(){
       if(this.layingDown){
         this.cranky = false;
+        this.task = 0;
       }
       return this.standing || this.layindDown ? 'NO!' : "ZZZZ"
       // if(this.standing){
@@ -53,6 +55,16 @@ class Centaur {
     standUp(){
       this.standing = true;
       this.layingDown = false;
+    }
+    drinkPotion(){
+      if(this.standing && this.task >= 3){
+        this.cranky = false
+        this.rested = false;
+      }
+      if(this.rested){
+        this.cranky = true
+      }
+      return 'Not while I\'m laying down!'
     }
   }
 
