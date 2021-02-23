@@ -1,7 +1,60 @@
 class Centaur {
   constructor(centaur) {
     this.name = centaur.name;
+    this.breed = centaur.type;
+    this.cranky = false | centaur.cranky; 
+    this.standing = true | centaur.standing;
+    this.layingDown = false | centaur.layingDown;
+    this.task = 0;
   }
+  shoot = () => {
+    this.task++
+    this.task >= 3 ? this.cranky = true : this.cranky = false;
+    if (this.cranky || this.layingDown) {
+      return 'NO!'
+    } else {
+      return 'Twang!!!'
+    }
+  }
+
+  run = () => {
+    this.task++ 
+    this.task >= 3 ? this.cranky = true : this.cranky = false;
+    if (this.cranky || this.layingDown) {
+      return 'NO!'
+    } else {
+      return 'Clop clop clop clop!!!'
+    } 
+  }
+
+  sleep = () => {
+    if(this.standing) {
+      return 'NO!'
+    } 
+    if(this.layingDown) {
+      this.cranky = false;
+      this.task = 0;
+      return 'ZZZZ'
+    }
+  }
+
+  layDown = () => {
+    this.layingDown = true;
+    this.standing = false;
+  }
+
+  standUp = () => {
+    this.standing = true;
+    this.layingDown = false;
+  }
+
+  drinkPotion = () => {
+    this.cranky ? this.cranky = false : this.cranky = true;
+    if(this.layingDown) {
+      return 'Not while I\'m laying down!'
+    }
+  }
+
 }
 
 module.exports = Centaur;
