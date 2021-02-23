@@ -1,7 +1,35 @@
 class Magician {
-  constructor() {
-
+  constructor(magician) {
+    this.name = magician.name
+    this.topHat = true || magician.topHat
+    magician.topHat === undefined ? this.topHat = true : this.topHat = magician.topHat;
+    this.confident = false;
+    this.confidence = 0;
+    
   }
+
+  incantation = (spell) => {
+    return `${spell.toUpperCase()}!`;
+  }
+
+  cast = () => {
+    this.confidence++
+    this.confidence >= 3 ? this.confident = true : this.confident = false;
+    if (this.topHat) {
+      return 'PULL RABBIT FROM TOP HAT'
+    } else {
+      return 'PULL DOVE FROM SLEEVE'
+    }
+  }
+
+  performShowStopper = () => {
+    if (this.confident) {
+      return 'WOW! The magician totally just sawed that person in half!'
+    } else {
+      return 'Oh no! Practice more before attempting this trick!'
+    }
+  }
+
 };
 
 module.exports = Magician; 
