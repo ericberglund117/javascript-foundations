@@ -1,38 +1,49 @@
 class Magician {
-  constructor(magician){
-    this.name = magician.name;
-    this.topHat = magician.topHat || true;
-    this.confident = false;
-    this.spellCount = 0;
-    if (magician.topHat === undefined){
-      this.topHat = true;
-    } else {
-      this.topHat = magician.topHat
-    };
-    }
-    incantation(spell){
-      return spell.toUpperCase() + "!"
-    }
-    cast(spell){
-      this.confident++
-      if(this.confident >= 3){
-        this.confident = true;
-      }
-      if (this.topHat == true){
-        return "PULL RABBIT FROM TOP HAT"
-      } else{
-        return "PULL DOVE FROM SLEEVE"
-      }
-      }
-    performShowStopper(){
-      if(this.confident === true){
-        return 'WOW! The magician totally just sawed that person in half!';
-      } else{
-        return 'Oh no! Practice more before attempting this trick!';
-      }
-    }
-    }
+  constructor() {
+
+  }
+};
+
+module.exports = Magician; 
 
 
 
-module.exports = Magician
+
+// class Magician {
+//   constructor(magician){
+//     this.name = magician.name;
+//     this.topHat = magician.topHat || true;
+//     this.confident = false;
+//     this.spellCount = 0;
+//     if (magician.topHat === undefined){
+//       this.topHat = true;
+//     } else {
+//       this.topHat = magician.topHat
+//     };
+//     }
+//     incantation(spell){
+//       return spell.toUpperCase() + "!"
+//     }
+//     cast(spell){
+//       this.confident++
+//       if(this.confident >= 3){
+//         this.confident = true;
+//       }
+//       if (this.topHat == true){
+//         return "PULL RABBIT FROM TOP HAT"
+//       } else{
+//         return "PULL DOVE FROM SLEEVE"
+//       }
+//       }
+//     performShowStopper(){
+//       if(this.confident === true){
+//         return 'WOW! The magician totally just sawed that person in half!';
+//       } else{
+//         return 'Oh no! Practice more before attempting this trick!';
+//       }
+//     }
+//     }
+
+
+
+// module.exports = Magician
